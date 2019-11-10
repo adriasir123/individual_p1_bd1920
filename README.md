@@ -44,7 +44,7 @@ BEGIN
 END;
 /
 ```
-![Prueba ejecución correcta procedimiento1](https://i.imgur.com/XjdME6l.png)
+![Prueba ejecución correcta procedimiento1](https://i.imgur.com/XjdME6l.png)  
 *Prueba ejecución correcta procedimiento1*
 
 ```plsql
@@ -53,7 +53,7 @@ BEGIN
 END;
 /
 ```
-![Prueba ejecución correcta procedimiento2](https://i.imgur.com/1OUkObW.png)
+![Prueba ejecución correcta procedimiento2](https://i.imgur.com/1OUkObW.png)  
 *Prueba ejecución correcta procedimiento2*
 
 ### Paso 4
