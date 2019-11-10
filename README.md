@@ -33,7 +33,7 @@ SELECT owner, object_name
 FROM ALL_OBJECTS
 WHERE OBJECT_TYPE='PROCEDURE' AND OWNER='JUANDI';
 ```
-![Prueba listado de procedimientos del usuario juandi](https://i.imgur.com/oNF2ej1.png)
+![Prueba listado de procedimientos del usuario juandi](https://i.imgur.com/oNF2ej1.png)  
 *Prueba listado de procedimientos del usuario juandi*
 
 ### Paso 3
