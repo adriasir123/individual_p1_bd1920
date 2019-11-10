@@ -32,14 +32,14 @@ WHERE OBJECT_TYPE='PROCEDURE' AND OWNER='JUANDI';
 
 ### Paso 3
 Ejecutamos los 2 procedimientos para que finalmente, inserten esos datos. Lo hacemos con los siguientes bloques plsql
-```sql
+```plsql
 BEGIN
     XML_MED;
 END;
 ```
 [Prueba ejecución correcta procedimiento1](https://www.google.com)
 
-```sql
+```plsql
 BEGIN
     XML_INCOMP;
 END;
