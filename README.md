@@ -16,7 +16,7 @@ CREATE TABLE xml_tab (
   xml_data  XMLTYPE
 );
 ```
-![Prueba tabla creada](https://i.imgur.com/cJv3H1j.png)
+![Prueba tabla creada](https://i.imgur.com/cJv3H1j.png)  
 *Prueba tabla creada*
 
 ### Paso 2
