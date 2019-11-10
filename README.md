@@ -22,7 +22,7 @@ CREATE TABLE xml_tab (
 ### Paso 2
 Creamos los 2 procedimientos que insertarán los datos xml de cada tabla (Medicamentos e incompatibilidades)
 ![Prueba creación procedimiento1](https://i.imgur.com/1BKCWE7.png)  
-*Prueba creación procedimiento1*
+*Prueba creación procedimiento1*  
 ![Prueba creación procedimiento2](https://i.imgur.com/TzTlnmV.png)  
 *Prueba creación procedimiento2*
 
