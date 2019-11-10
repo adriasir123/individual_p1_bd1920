@@ -98,6 +98,8 @@ Podemos estar seguros de que estos datos son correctos, comparando esos datos co
 
 
 ## Problema 4 (PostgreSQL)
+(todo el código lo encontrarás en su directorio correspondiente)
+
 Pasos para la transformación en xml de los datos de una tabla
 
 ### Paso 1
@@ -173,3 +175,10 @@ select "xml_incomp"();
 
 ## Problema 7 (Oracle)
 (todo el código lo encontrarás en su directorio correspondiente)
+
+
+
+
+
+
+
