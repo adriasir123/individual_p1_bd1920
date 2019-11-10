@@ -91,7 +91,7 @@ WHERE x.id=2;
 *Prueba mostrado de datos de Incompatibilidades*
 
 Podemos estar seguros de que estos datos son correctos, comparando esos datos con los que tiene la tabla real. Mostraré un select completo de esa tabla, para que se vea que todo está correcto:
-![Select incompatibilidades](https://i.imgur.com/G6UlBHQ.png)
+![Select incompatibilidades](https://i.imgur.com/G6UlBHQ.png)  
 *Datos de incompatibilidades*
 
 > Fuentes: https://oracle-base.com/articles/misc/xmltable-convert-xml-data-into-rows-and-columns-using-sql
