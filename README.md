@@ -4,7 +4,7 @@ Además, la documentación de cada ejercicio con pruebas de funcionamiento, las 
 
 ---
 
-## Problema 4 (oracle)
+## Problema 4 (Oracle)
 (todo el código lo encontrarás en su directorio correspondiente)
 
 Pasos para la transformación en xml de los datos de una tabla
@@ -97,7 +97,12 @@ Podemos estar seguros de que estos datos son correctos, comparando esos datos co
 > Fuentes: https://oracle-base.com/articles/misc/xmltable-convert-xml-data-into-rows-and-columns-using-sql
 
 
+## Problema 4 (PostgreSQL)
 
 
-## Problema 7 (oracle)
+
+
+
+
+## Problema 7 (Oracle)
 (todo el código lo encontrarás en su directorio correspondiente)
