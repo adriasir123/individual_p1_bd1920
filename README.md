@@ -151,7 +151,7 @@ WHERE  n.nspname not like 'pg%' AND n.nspname = 'public';
 ### Paso 3
 Después de tener las funciones creadas, ya sólo nos quedaría llamarlas, y ver el resultado.
 
-**Llamada a la función de medicamentos**
+**Llamada a la función de medicamentos**  
 Lo hacemos de la siguiente manera:
 
 ```sql
@@ -161,7 +161,7 @@ select "xml_med"();
 ![](https://i.imgur.com/SNX5Gzl.png)  
 *Contenido XML de la tabla medicamentos*
 
-**Llamada a la función de incompatibilidades**
+**Llamada a la función de incompatibilidades**  
 Lo hacemos de la siguiente manera:
 
 ```sql
