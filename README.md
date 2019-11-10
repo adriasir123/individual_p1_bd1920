@@ -98,11 +98,78 @@ Podemos estar seguros de que estos datos son correctos, comparando esos datos co
 
 
 ## Problema 4 (PostgreSQL)
+Pasos para la transformación en xml de los datos de una tabla
 
+### Paso 1
+> En postgreSQL el proceso de transformar los datos de una tabla a xml se acorta ya que tenemos la suerte de contar con una función interna de postgreSQL llamada "table_to_xml()", que transforma toda una tabla a xml directamente para nosotros 
 
+Lo primero que tendremos que hacer es crear una función por cada tabla que queramos transformar a xml, para tenerlo todo más organizado
 
+**Creando función para medicamentos**
+```plsql
+CREATE FUNCTION xml_med() RETURNS varchar AS $xml_med$ 
+DECLARE
+    var varchar;
+BEGIN
+    SELECT table_to_xml('medicamentos', true, false, '') INTO var;
 
+    RETURN var;
+END;
+$xml_med$ LANGUAGE plpgsql;
+```
+![](https://i.imgur.com/gupk0KC.png)  
+*Prueba de creación de la función para la tabla medicamentos*
 
+**Creando función para incompatibilidades**
+```plsql
+CREATE FUNCTION xml_incomp() RETURNS varchar AS $xml_incomp$ 
+DECLARE
+    var varchar;
+BEGIN
+    SELECT table_to_xml('incompatibilidades', true, false, '') INTO var;
+
+    RETURN var;
+END;
+$xml_incomp$ LANGUAGE plpgsql;
+```
+![](https://i.imgur.com/HBL5kxA.png)  
+*Prueba de creación de la función para la tabla incompatibilidades*
+
+### Paso 2
+Con la anterior comprobación de la creación de las funciones nos bastaría, pero vamos a ir un paso más allá, y vamos a listar exactamente las funciones que se han creado para el usuario juandi. Así sabremos al 100% que esas funciones se crearon, y que pertenecen al usuario juandi.
+
+Vamos a tener que ejecutar el siguiente bloque de código para sacar esta información:
+```sql
+SELECT quote_ident(n.nspname) as schema , quote_ident(p.proname) as function 
+FROM   pg_catalog.pg_proc p
+JOIN   pg_catalog.pg_namespace n ON n.oid = p.pronamespace 
+WHERE  n.nspname not like 'pg%' AND n.nspname = 'public';
+```
+![](https://i.imgur.com/IacWlwW.png)  
+*Aquí vemos reflejado que juandi creó las 2 funciones que necesitamos*
+
+### Paso 3
+Después de tener las funciones creadas, ya sólo nos quedaría llamarlas, y ver el resultado.
+
+**Llamada a la función de medicamentos**
+Lo hacemos de la siguiente manera:
+
+```sql
+select "xml_med"();
+```
+![](https://i.imgur.com/DMoV8WN.png)
+![](https://i.imgur.com/SNX5Gzl.png)  
+*Contenido XML de la tabla medicamentos*
+
+**Llamada a la función de incompatibilidades**
+Lo hacemos de la siguiente manera:
+
+```sql
+select "xml_incomp"();
+```
+![](https://i.imgur.com/Yc3vfSr.png)
+![](https://i.imgur.com/LPxoNve.png)  
+*Contenido XML de la tabla incompatibilidades*
 
 ## Problema 7 (Oracle)
 (todo el código lo encontrarás en su directorio correspondiente)
