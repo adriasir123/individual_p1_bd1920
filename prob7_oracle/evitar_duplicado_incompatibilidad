@@ -1,0 +1,53 @@
+create or replace package Pkgincomp
+as
+	type tRegIncomp IS RECORD
+	(
+		codigo1 incompatibilidades.CodigoMedicamento1%type,
+		codigo2 incompatibilidades.CodigoMedicamento2%type
+    );
+	type tTablaIncomp is table of tRegIncomp
+	index by binary_integer;
+
+	v_TablaIncomp tTablaIncomp;
+end;
+/
+
+
+
+create or replace trigger Rellenarpaq
+before insert or update on incompatibilidades
+declare
+	cursor c_cursor
+	is
+	select CodigoMedicamento1, CodigoMedicamento2
+	from incompatibilidades;
+
+	i number:=0;
+begin
+	for v_for in c_cursor loop
+		Pkgincomp.v_TablaIncomp(i).codigo1:=v_for.CodigoMedicamento1;
+		Pkgincomp.v_TablaIncomp(i).codigo2:=v_for.codigomedicamento2;
+		i:=i+1;
+	end loop;
+end;
+/
+
+
+
+
+
+create or replace trigger ComprobarIncompatibilidades
+before insert or update on incompatibilidades
+for each row
+declare
+    
+begin
+	for i in Pkgincomp.v_TablaIncomp.FIRST .. Pkgincomp.v_TablaIncomp.LAST loop
+		if Pkgincomp.v_TablaIncomp(i).codigo1 = :old.CodigoMedicamento2 AND Pkgincomp.v_TablaIncomp(i).codigo2 = :old.CodigoMedicamento1 then
+        raise_application_error(-20002,'No pueden haber incompatibilidades duplicadas');
+        end if;
+	end loop;
+end;
+/
+ 
+
