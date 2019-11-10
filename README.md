@@ -46,7 +46,7 @@ END;
 ```
 [Prueba ejecución correcta procedimiento2](https://www.google.com)
 ### Paso 4
-Mostramos los datos xml añadidos en xml_tab, para cada una de las tablas que hemos convertido en xml.
+Mostramos los datos xml añadidos en xml_tab, para cada una de las tablas que hemos convertido en xml.  
 **Datos XML Medicamentos**
 
 ```sql
@@ -57,7 +57,7 @@ SELECT x.xml_data.getClobVal() xml_output
 FROM   xml_tab x
 WHERE x.id=1;
 ```
-[Prueba mostrado de datos de medicamentos](https://www.google.com)
+[Prueba mostrado de datos de medicamentos](https://www.google.com)  
 **Datos XML Incompatibilidades**
 ```sql
 SET LONG 500000000
