@@ -43,8 +43,8 @@ declare
     
 begin
 	for i in Pkgincomp.v_TablaIncomp.FIRST .. Pkgincomp.v_TablaIncomp.LAST loop
-		if Pkgincomp.v_TablaIncomp(i).codigo1 = :old.CodigoMedicamento2 AND Pkgincomp.v_TablaIncomp(i).codigo2 = :old.CodigoMedicamento1 then
-        raise_application_error(-20002,'No pueden haber incompatibilidades duplicadas');
+		if Pkgincomp.v_TablaIncomp(i).codigo1 = :new.CodigoMedicamento2 AND Pkgincomp.v_TablaIncomp(i).codigo2 = :new.CodigoMedicamento1 then
+            raise_application_error(-20002,'No pueden haber incompatibilidades duplicadas');
         end if;
 	end loop;
 end;
