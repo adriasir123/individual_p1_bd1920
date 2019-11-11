@@ -179,7 +179,7 @@ select "xml_incomp"();
 La idea general es que debe de saltar un trigger si introducimos un registro duplicado en la tabla Incompatibilidades.
 
 ### Paso 1
-Mostraré los registros que tiene la tabla Incompatibilidades, para que veamos qué registro podríamos meter para que saltase el trigger
+Mostraré los registros que tiene la tabla Incompatibilidades, para que veamos qué registro podríamos meter para que saltase el trigger  
 ![](https://i.imgur.com/Ew63Onc.png)
 
 Como vemos, existe AL8-0L5 pero no al revés. Por lo tanto, si insertamos 0L5-AL8, lo contrario, debería saltar el trigger de duplicidad.
